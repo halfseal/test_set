@@ -13,8 +13,8 @@ fi
 TMP_DIR="tmp_pages"
 mkdir -p "$TMP_DIR"
 
-TOTAL_PAGES=1000000  # Total number of pages
-DUPLICATE_PAGES=100000  # Pages that will be duplicated
+TOTAL_PAGES=250000  # Total number of pages
+DUPLICATE_PAGES=25000  # Pages that will be duplicated
 MAX_DUPLICATES=255  # Max repetitions for a page
 
 # Counter to keep track of total written pages
@@ -26,7 +26,7 @@ for i in $(seq 1 $DUPLICATE_PAGES); do
 done
 
 # Step 3: Write remaining unique pages if needed
-dd if=/dev/urandom bs=4K count=900000 of="$FILE" status=none
+dd if=/dev/urandom bs=4K count=225000 of="$FILE" status=none
 ls -lh random_data_with_duplicates.bin
 
 # Step 2: Write 10,000 duplicate pages with controlled repetition
